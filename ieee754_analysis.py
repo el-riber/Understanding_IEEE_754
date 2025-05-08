@@ -45,9 +45,12 @@ plt.title("Precision Loss in IEEE 754")
 plt.xlabel("Value")
 plt.ylabel("Error (x + 1 - 1 - x)")
 plt.grid(True)
-plt.savefig("precision_loss_plot.png")
+
+precision_loss_plot_path_fixed = os.path.join("/mnt/data/ieee754_assignment", "precision_loss_plot_fixed.png")
+plt.savefig(precision_loss_plot_path_fixed)
 plt.close()
 
+precision_loss_plot_path_fixed
 # Print Summary
 print("Part 1: IEEE 754 Binary Representation")
 print("0.15625 =", float_to_ieee754(0.15625))
