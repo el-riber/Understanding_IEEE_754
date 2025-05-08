@@ -17,11 +17,11 @@ This project demonstrates the behavior of IEEE 754 32-bit floating-point numbers
 
 1. Make sure Python is installed.
 2. Install the required libraries (if not already installed):
-   bash
+   
    pip install matplotlib numpy
  
 3. Run the script:
-   bash
+   
    python ieee754_analysis.py
    
 
