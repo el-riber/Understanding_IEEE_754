@@ -1,0 +1,26 @@
+IEEE 754 Assignment Output
+
+Part 1: IEEE 754 Binary Representation
+0.15625 = 00111110001000000000000000000000
+
+Part 2: Arithmetic Results
+0.1 + 0.2 = 0.30000000000000004 → IEEE 754: 00111110100110011001100110011010
+1.0 / 3.0 = 0.3333333333333333 → IEEE 754: 00111110101010101010101010101011
+
+Part 3: Special Values
+Positive Infinity: inf
+Negative Infinity: -inf
+NaN: nan, NaN != NaN? True
+
+Part 4: Rounding Modes
+ROUND_HALF_UP: 1.24
+ROUND_DOWN: 1.23
+
+Part 5: Underflow and Overflow
+Underflow (1e-50 * 1e-50): 1e-100
+Overflow (1e308 * 1e10): inf
+
+Part 6: Precision Loss plot saved as: precision_loss_plot.png
+
+Part 7: Comparative Study (to be completed in written report)
+Compare Python vs. JavaScript IEEE 754 behavior, rounding, etc.
