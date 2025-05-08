@@ -3,6 +3,7 @@ import math
 from decimal import Decimal, getcontext, ROUND_HALF_UP, ROUND_DOWN
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 # Part 1: Convert Decimal to IEEE 754
 def float_to_ieee754(num):
@@ -33,6 +34,15 @@ underflow = 1e-50 * 1e-50
 overflow = 1e308 * 1e10
 
 # Part 6: Precision Loss Visualization
+
+# Create a local directory to save the plot
+
+output_dir = os.path.join(os.getcwd(), "ieee754_output")
+os.makedirs(output_dir, exist_ok=True)
+
+# Define output file path
+precision_loss_plot_path = os.path.join(output_dir, "precision_loss_plot.png")
+
 x_vals = np.logspace(-45, 38, 1000)
 y_vals = x_vals + 1 - 1
 error_vals = y_vals - x_vals
@@ -45,8 +55,12 @@ plt.title("Precision Loss in IEEE 754")
 plt.xlabel("Value")
 plt.ylabel("Error (x + 1 - 1 - x)")
 plt.grid(True)
-plt.savefig("precision_loss_plot.png")
+
+# Save the plot
+plt.savefig(precision_loss_plot_path)
 plt.close()
+
+print(f"Plot saved at: {precision_loss_plot_path}")
 
 # Print Summary
 print("Part 1: IEEE 754 Binary Representation")
