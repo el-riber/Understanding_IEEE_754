@@ -34,6 +34,15 @@ underflow = 1e-50 * 1e-50
 overflow = 1e308 * 1e10
 
 # Part 6: Precision Loss Visualization
+
+# Create a local directory to save the plot
+
+output_dir = os.path.join(os.getcwd(), "ieee754_output")
+os.makedirs(output_dir, exist_ok=True)
+
+# Define output file path
+precision_loss_plot_path = os.path.join(output_dir, "precision_loss_plot.png")
+
 x_vals = np.logspace(-45, 38, 1000)
 y_vals = x_vals + 1 - 1
 error_vals = y_vals - x_vals
@@ -47,11 +56,12 @@ plt.xlabel("Value")
 plt.ylabel("Error (x + 1 - 1 - x)")
 plt.grid(True)
 
-precision_loss_plot_path_fixed = os.path.join("/mnt/data/ieee754_assignment", "precision_loss_plot_fixed.png")
-plt.savefig(precision_loss_plot_path_fixed)
+# Save the plot
+plt.savefig(precision_loss_plot_path)
 plt.close()
 
-precision_loss_plot_path_fixed
+print(f"Plot saved at: {precision_loss_plot_path}")
+
 # Print Summary
 print("Part 1: IEEE 754 Binary Representation")
 print("0.15625 =", float_to_ieee754(0.15625))
