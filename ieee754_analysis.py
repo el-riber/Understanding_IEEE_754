@@ -3,6 +3,7 @@ import math
 from decimal import Decimal, getcontext, ROUND_HALF_UP, ROUND_DOWN
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 # Part 1: Convert Decimal to IEEE 754
 def float_to_ieee754(num):
